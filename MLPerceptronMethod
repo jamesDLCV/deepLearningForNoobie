@@ -1,0 +1,31 @@
+import numpy as np
+numsize = 1000
+arrA = np.random.randint(5, size=numsize)
+#sum = [0, 0, 0, 0, 0]
+sum = np.zeros(5)
+for num in range(numsize):
+  sum[arrA[num]]+=1
+print(sum)
+
+def MLPerceptron(X, W1, W2):
+    x = np.array(X)
+    w1 = np.array(W1)
+    w2 = np.array(W2)
+    s1 = np.array([0.0]*len(X))
+    s2 = np.array([0.0]*len(X))
+    for num in range(len(x)):
+        s1[num] = np.sum(x*w1[num]) > 0
+        print(x, " ", "\n", w1, " ", w1[num], " ", np.sum(x*w1[num]), " ", "s1", "[", num, "]", s1[num])
+
+    for num in range(len(x)):
+        s2[num] = np.sum(s1*w2[num]) > 0
+    return s2
+    
+X = [0, 0, 0, 0, 0, 1]
+print(MLPerceptron(X, W1, W2))
+X = [0, 1, 0, 0, 0, 1]
+print(MLPerceptron(X, W1, W2))
+X = [1, 0, 0, 0, 0, 1]
+print(MLPerceptron(X, W1, W2))
+X = [1, 1, 0, 0, 0, 1]
+print(MLPerceptron(X, W1, W2))
