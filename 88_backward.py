@@ -75,7 +75,7 @@ print("Total price: ", price)
 print(
     "\ndapple_num = ", dapple_num,
     "\ndapple = ", dapple,
-    "\ndorange_num", dorange_num,
-    "\ndorange", dorange,
-    "\ndtax", dtax
+    "\ndorange_num = ", dorange_num,
+    "\ndorange = ", dorange,
+    "\ndtax = ", dtax
 )
