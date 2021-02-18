@@ -52,7 +52,7 @@ price = mul_tax_layer.forward(all_price, tax)
 dprice = 1
 dall_price, dtax = mul_tax_layer.backward(dprice)
 dapple_price, dorange_price = add_apple_orange_layer.backward(dall_price)
-dapple, dapple_num = mul_apple_layer.backward(dorange_price)
+dapple, dapple_num = mul_apple_layer.backward(dapple_price)
 dorange, dorange_num = mul_orange_layer.backward(dorange_price)
 
 print("Total price: ", price)
